@@ -1,15 +1,15 @@
 ---
-id: 001
-title: Create Todo App Constitution Phase I
+id: 002
+title: Update Constitution Multi Phase Evolution
 stage: constitution
-date: 2026-01-01
+date: 2026-01-12
 surface: agent
-model: claude-sonnet-4-5
+model: claude-sonnet-4-5-20250929
 feature: none
-branch: main
+branch: 001-fullstack-todo-auth
 user: user
-command: /sp.constitution
-labels: ["constitution", "phase-i", "todo-app", "governance"]
+command: sp.constitution
+labels: [constitution, multi-phase, todo-app]
 links:
   spec: null
   ticket: null
@@ -18,76 +18,72 @@ links:
 files:
   - .specify/memory/constitution.md
 tests:
-  - none
+  - constitution update validated
 ---
 
 ## Prompt
 
-# Todo App Constitution (Phase I)
+```text
+# odo App Evolution - Specification Constitution
 
-## Purpose
-Define rules for building a Python in-memory Todo CLI app.
+## Core Development Mandate
 
-## Core Principles
-- ✅ Specs must be refined until correct output is produced
-- ✅ One feature = one clear spec
-- ✅ Python clean code & readable structure
+**Spec-Driven Development Only**: Constitution → Specify → Plan → Tasks → Implement
 
-## Scope (Phase I Only)
-- In-memory storage (no DB, no files)
-- Console-based interaction
-- Single-user, single-session
+- All code must be generated using Claude Code based on specifications
+- No manual coding permitted
+- Every feature requires specification before implementation
 
-## Mandatory Features
-- Add Task
-- View Task List
-- Update Task
-- Delete Task
-- Mark Task as Complete / Incomplete
+## Five-Phase Evolution Path
 
-## Constraints
-- UV
-- Python 3.13+
-- CLI only
-- Tasks identified by unique ID
-- No external services
+### Phase I: Console App (Python)
 
-## Definition of Done
-- App runs without errors
-- All basic features work via CLI
-- Code follows spec exactly
+**Stack**: Python 3.13+, UV, In-memory storage
+
+**Features**: Add, Delete, Update, View, Mark Complete
+
+### Phase II: Web Application
+
+**Stack**: Next.js 16+ (App Router), FastAPI, Neon PostgreSQL, Better Auth (JWT)
+
+**Architecture**: Monorepo, RESTful API, Stateless backend, User isolation
+
+### Phase III: AI Chatbot
+
+**Stack**: OpenAI ChatKit, OpenAI Agents SDK, MCP SDK
+
+**MCP Tools**: add_task, list_tasks, complete_task, delete_task, update_task
+
+**Requirement**: Stateless architecture with database persistence
+
+### Phase IV: Kubernetes (Local)
+
+**Stack**: Docker, Minikube, Helm Charts, kubectl-ai, Kagent
+
+**Standard**: Follow cloud-native patterns for local deployment
+```
 
 ## Response snapshot
 
-Created comprehensive Todo App Constitution (v1.0.0) with 5 core principles:
+Updated the constitution to reflect the multi-phase evolution of the Todo App project, moving from a single-phase console app to a comprehensive multi-phase development plan encompassing web application, AI chatbot, and Kubernetes deployment. The new constitution includes:
 
-1. **Spec-Driven Refinement**: Specifications must be refined until correct output is produced
-2. **Clean Code & Readability**: Python clean code principles mandatory
-3. **Single-Feature Scope**: One feature = one clear spec
-4. **Phase I Constraints (NON-NEGOTIABLE)**: In-memory, CLI-only, Python 3.13+, UV, single-session
-5. **CLI-Only Interaction**: Console-based with unique task IDs
-
-Key sections:
-- **Mandatory Features**: Add, View, Update, Delete, Mark Complete/Incomplete
-- **Technology Stack**: Python 3.13+, UV, standard library preferred
-- **Development Workflow**: Spec-first approach with 6-step process
-- **Code Standards**: PEP 8, type hints, <20 line functions, docstrings
-- **Definition of Done**: 6 clear acceptance criteria
-- **Governance**: Amendment process, compliance rules, semantic versioning
-
-Constitution file created at `.specify/memory/constitution.md` with Sync Impact Report embedded.
+- Updated core principles to accommodate multi-phase development
+- Detailed feature requirements for each phase
+- Technology stacks for each phase
+- Clear definition of done criteria for each phase
+- Version updated from 1.0.0 to 2.0.0 to reflect major changes
 
 ## Outcome
 
-- ✅ Impact: Constitution v1.0.0 ratified for Todo App Phase I development. Establishes clear governance and technical constraints.
-- 🧪 Tests: None (governance document)
-- 📁 Files: 1 created (.specify/memory/constitution.md)
-- 🔁 Next prompts: Create feature spec for first mandatory feature (e.g., Add Task), run /sp.specify
-- 🧠 Reflection: Constitution successfully defines Phase I boundaries with NON-NEGOTIABLE constraints. All templates reviewed for alignment - no changes needed. Ready for spec creation.
+- ✅ Impact: Constitution updated to support multi-phase development approach
+- 🧪 Tests: Manual validation of updated constitution content
+- 📁 Files: .specify/memory/constitution.md updated successfully
+- 🔁 Next prompts: Continue with phase-specific specifications based on new constitution
+- 🧠 Reflection: Major version increment appropriate for multi-phase expansion
 
 ## Evaluation notes (flywheel)
 
 - Failure modes observed: None
-- Graders run and results (PASS/FAIL): PASS - All placeholders filled, version set to 1.0.0, dates formatted correctly, principles clear and testable
-- Prompt variant (if applicable): Standard constitution creation
-- Next experiment (smallest change to try): None - baseline constitution established successfully
+- Graders run and results (PASS/FAIL): PASS
+- Prompt variant (if applicable): N/A
+- Next experiment (smallest change to try): Begin phase-specific feature specifications
