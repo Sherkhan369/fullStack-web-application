@@ -1,4 +1,91 @@
-﻿# Claude Code Rules
+﻿@AGENTS.md
+
+# Todo App Development Guidelines
+
+Auto-generated from all feature plans. Last updated: 2026-01-07
+
+## Active Technologies
+
+- Python 3.11+ + FastAPI, SQLModel, Better Auth (JWT), Neon PostgreSQL client, Next.js (001-fullstack-todo-auth)
+- Python 3.13+ (001-fullstack-todo-auth)
+
+## Project Structure
+
+```text
+# Spec-Kit Monorepo Organization
+todo-app/
+├── .specify/                    # Spec-Kit configuration
+│   ├── config.yaml
+│   ├── scripts/                 # Spec-Kit scripts and tools
+│   └── templates/              # Template files for specs, plans, tasks
+├── specs/                       # Spec-Kit managed specifications
+│   ├── overview.md              # Project overview
+│   ├── architecture.md          # System architecture
+│   ├── features/                # Feature specifications
+│   │   ├── task-crud.md
+│   │   ├── authentication.md
+│   │   └── chatbot.md
+│   ├── api/                     # API specifications
+│   │   ├── rest-endpoints.md
+│   │   └── mcp-tools.md
+│   ├── database/                # Database specifications
+│   │   └── schema.md
+│   └── ui/                      # UI specifications
+│       ├── components.md
+│       └── pages.md
+├── CLAUDE.md                    # Root Claude Code instructions
+├── frontend/                    # Next.js application
+│   ├── CLAUDE.md
+│   ├── src/
+│   │   ├── app/                 # Next.js App Router pages and layouts
+│   │   ├── components/          # Reusable React components
+│   │   ├── lib/                 # Utility functions and hooks
+│   │   ├── services/            # API service layer
+│   │   └── styles/              # CSS-in-JS or styled-components
+│   ├── package.json
+│   ├── tsconfig.json
+│   └── tests/
+│       ├── integration/         # E2E tests with Playwright/Cypress
+│       └── unit/                # Component unit tests
+├── backend/                     # FastAPI application
+│   ├── CLAUDE.md
+│   ├── src/
+│   │   ├── models/              # SQLModel database models
+│   │   ├── schemas/             # Pydantic schemas for validation
+│   │   ├── services/            # Business logic services
+│   │   ├── api/                 # FastAPI route handlers
+│   │   ├── auth/                # Authentication middleware and utilities
+│   │   └── database/            # Database connection and session management
+│   ├── pyproject.toml
+│   ├── uv.lock
+│   └── tests/
+│       ├── unit/                # Unit tests for models/services
+│       ├── integration/         # API integration tests
+│       └── contract/            # API contract tests
+├── docker-compose.yml           # Local development setup
+├── .env.example                 # Environment variables template
+├── README.md                    # Project documentation
+└── history/                     # Development history and artifacts
+    ├── prompts/                 # Prompt History Records (PHRs)
+    └── adr/                     # Architecture Decision Records
+```
+
+## Commands
+
+cd src; pytest; ruff check .
+
+## Code Style
+
+Python 3.11+: Follow standard conventions
+
+## Recent Changes
+
+- 001-fullstack-todo-auth: Added Python 3.11+ + FastAPI, SQLModel, Better Auth (JWT), Neon PostgreSQL client, Next.js; Reorganized into Spec-Kit monorepo structure
+
+<!-- MANUAL ADDITIONS START -->
+@AGENTS.md
+
+# Claude Code Rules
 
 This file is generated during init for the selected agent.
 
@@ -113,7 +200,7 @@ You are not expected to solve every problem autonomously. You MUST invoke the us
 1.  **Ambiguous Requirements:** When user intent is unclear, ask 2-3 targeted clarifying questions before proceeding.
 2.  **Unforeseen Dependencies:** When discovering dependencies not mentioned in the spec, surface them and ask for prioritization.
 3.  **Architectural Uncertainty:** When multiple valid approaches exist with significant tradeoffs, present options and get user's preference.
-4.  **Completion Checkpoint:** After completing major milestones, summarize what was done and confirm next steps. 
+4.  **Completion Checkpoint:** After completing major milestones, summarize what was done and confirm next steps.
 
 ## Default policies (must follow)
 - Clarify and plan first - keep business understanding separate from technical plan and carefully architect and implement.
@@ -208,3 +295,4 @@ Wait for consent; never auto-create ADRs. Group related decisions (stacks, authe
 
 ## Code Standards
 See `.specify/memory/constitution.md` for code quality, testing, performance, security, and architecture principles.
+<!-- MANUAL ADDITIONS END -->
